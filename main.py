@@ -63,6 +63,41 @@ class Healer(Character):
     SPECIAL_SKILL = 'Защита'
 
 
+def start_training(character):
+    """
+    Принимает обьект метод
+    возвращает результат о цикле.
+    """
+    commands = {'attack': character.attack, 'defence': character.defence, 'special': character.special}
+
+    cmd = None
+    while cmd != 'skip':
+        cmd = input('Введите команду: ')
+        if cmd in commands:
+            print(commands[cmd]())
+
+
+def choice_char_class(char_name: str) -> Character:
+    """
+     Возвращает строку с выборами
+     классом персонажа.
+    """
+    game_classes = {'warrior': Warrior, 'mage': Mage, 'healer': Healer}
+
+    approve_choice: str = None
+
+    while approve_choice != 'y':
+        select_class = input('Введи называние персонажа, '
+                             'за которого хочешь играть: Воитель - warrior, '
+                             'Маг - mage, Лекарь - healer: ')
+        char_class: Character = game_classes[select_class](char_name)
+        print(char_class)
+        approve_choice = input('Нажми (Y), чтобы потдвердить выбор, '
+                               'или любую другую кнопку, '
+                               'чтобы выбрать другого персожана ').lower()
+        return char_class
+
+
 warrior = Warrior('Кодослав')
 print(warrior)
 print(warrior.attack())
