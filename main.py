@@ -37,7 +37,7 @@ class Character:
 
 
 class Warrior(Character):
-    BRIEF_DESC_CHAR_CLASS = (' дерзский воин ближного боя.'
+    BRIEF_DESC_CHAR_CLASS = (' дерзкий воин ближнего боя.'
                              ' Сильный, выносливый и отважный')
     RANGE_VALUE_ATTACK = (3, 5)
     RANGE_VALUE_DEFENCE = (5, 10)
@@ -46,11 +46,11 @@ class Warrior(Character):
 
 
 class Mage(Character):
-    BRIEF_DESC_CHAR_CLASS = (' находчивый воин дального боя.'
+    BRIEF_DESC_CHAR_CLASS = (' находчивый воин дальнего боя.'
                              ' Обладает высоким интеллектом')
     RANGE_VALUE_ATTACK = (5, 10)
     RANGE_VALUE_DEFENCE = (-2, 2)
-    SPECIAL_BUFF = DEFAULT_STAMINA + 40
+    SPECIAL_BUFF = DEFAULT_ATTACK + 40
     SPECIAL_SKILL = 'Атака'
 
 
@@ -59,7 +59,7 @@ class Healer(Character):
                              ' Черпает силы из природы, веры и духов')
     RANGE_VALUE_ATTACK = (-3, -1)
     RANGE_VALUE_DEFENCE = (2, 5)
-    SPECIAL_BUFF = DEFAULT_STAMINA + 30
+    SPECIAL_BUFF = DEFAULT_DEFENCE + 30
     SPECIAL_SKILL = 'Защита'
 
 
